@@ -1,0 +1,25 @@
+﻿<mah:MetroWindow x:Class="StaticPropertyExample.MainWindow"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                 xmlns:local="clr-namespace:StaticPropertyExample"
+                 xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                 xmlns:model="clr-namespace:StaticPropertyExample.model"
+                 Title="MainWindow"
+                 Width="800"
+                 Height="450"
+                 mc:Ignorable="d">
+    <mah:MetroWindow.DataContext>
+        <model:VM />
+    </mah:MetroWindow.DataContext>
+    <StackPanel>
+        <TextBlock Text="Your Age" />
+        <mah:NumericUpDown Value="{Binding Age}" />
+
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Is the Age valid (between 0 and 120)?" />
+            <ContentControl Style="{StaticResource My.Styles.ContentControl.Validation}" />
+        </StackPanel>
+    </StackPanel>
+</mah:MetroWindow>
